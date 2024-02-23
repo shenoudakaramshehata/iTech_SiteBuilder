@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    Layout = "Shared/Public/_PublicLayout.cshtml";
+}
+<div role="main" class="main">
+
+
+    @Html.Partial("Public/Partials/_PublicSlider")
+
+    @Html.Partial("Public/Partials/_PublicIntro")
+
+    @Html.Partial("Public/Partials/_PublicFlow")
+
+    @Html.Partial("Public/Partials/_PublicVideo")
+
+    @Html.Partial("Public/Partials/_PublicFeatures")
+@*    @Html.Partial("Public/Partials/_PublicServices", @Model.services)
+*@   
+    @Html.Partial("Public/Partials/_PublicPricePlans")
+    @Html.Partial("Public/Partials/_PublicCountDown")
+   
+
+    @Html.Partial("Public/Partials/_PublicCounts")
+
+    @Html.Partial("Public/Partials/_PublicCustomers")
+
+
+
+    @Html.Partial("Public/Partials/_PublicAffiliate")
+
+
+    @Html.Partial("Public/Partials/_PublicContact")
+      
+</div>

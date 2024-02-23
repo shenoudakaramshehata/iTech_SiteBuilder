@@ -1,0 +1,183 @@
+﻿@page
+@model iTech.Pages.RegisterAffiliateModel
+@{
+	Layout = "Shared/Public/_PublicLayout.cshtml";
+	var locale = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+	var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+	Layout = "Shared/Public/_PublicLayout.cshtml";
+}
+@*<style>
+	html #header.header-transparent {
+		background: #777 !important;
+	}
+
+	a:hover {
+		color: #0099e6 !important;
+	}
+</style>
+*@
+
+<div role="main" class="main">
+
+    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(public/img/page-header/page-header-services.jpg);">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+					<h1 class="text-10">
+						<strong>
+							@sharedResource["Register As Affiliate"]</strong></h1>
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb breadcrumb-light d-block text-center">
+						<li><a href="/Index">@sharedResource["Home"]</a></li>
+						<li class="active">@sharedResource["Register As Affiliate"]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+	<br/>
+	<br/>
+	<div class="container py-4">
+		<form id="frmSignIn" method="post" class="needs-validation" novalidate="novalidate">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="row justify-content-center" style="margin-top: -2rem;">
+			<div class="col-md-6 col-lg-5 mb-5 mb-lg-0">
+				@*<h2 class="font-weight-bold text-5 mb-0">Login</h2>*@
+					<input asp-for="Input.AffiliateToken" type="text" class="form-control" id="Address" placeholder="Enter Address" hidden>
+					<div class="row">
+						<div class="form-group col">
+							<label for="FullName" class="form-label text-color-dark text-3">@sharedResource["First-Name"] <span class="text-color-danger">*</span></label>
+							<input asp-for="Input.FullName"  type="text" class="form-control form-control-lg text-4" required="">
+							<span asp-validation-for="Input.FullName" class="text-danger"></span>
+						</div>
+					</div>
+
+					
+					<div class="row">
+						<div class="form-group col">
+							<label for="useremail" class="form-label text-color-dark text-3">@sharedResource["Email"] <span class="text-color-danger">*</span></label>
+							<input asp-for="Input.Email" type="email"  class="form-control form-control-lg text-4" required="">
+							<span asp-validation-for="Input.Email" class="text-danger"></span>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<label for="AccountNumber" class="form-label text-color-dark text-3">@sharedResource["Account Number"] <span class="text-color-danger">*</span></label>
+							<input oninput="formatAccountNumber()" asp-for="Input.AccountNumber" id="accountNumber" type="text"  class="form-control form-control-lg text-4" required="">
+							<span asp-validation-for="Input.AccountNumber" class="text-danger"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col">
+							<label for="IPan" class="form-label text-color-dark text-3">@sharedResource["IBAN"]  <span class="text-color-danger">*</span></label>
+							<input asp-for="Input.IPan" type="text"  class="form-control form-control-lg text-4" required="">
+							<span asp-validation-for="Input.IPan" class="text-danger"></span>
+						</div>
+					</div>
+				
+					<div class="row">
+						<div class="form-group col">
+							<label for="password-input" class="form-label text-color-dark text-3">@sharedResource["Password"] <span class="text-color-danger">*</span></label>
+							<input asp-for="Input.Password" type="password" class="form-control form-control-lg text-4" required="">
+						<span asp-validation-for="Input.Password" class="text-danger"></span>
+						</div>
+					</div>
+				
+			</div>
+			<div class="col-md-6 col-lg-5">
+					<div class="row">
+						<div class="form-group col">
+							<label for="LastName" class="form-label text-color-dark text-3">@sharedResource["Last-Name"] <span class="text-color-danger">*</span></label>
+							<input asp-for="Input.LastName" type="text"  class="form-control form-control-lg text-4" required="">
+							<span asp-validation-for="Input.LastName" class="text-danger"></span>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="form-group col">
+							<label for="PhoneNumber" class="form-label text-color-dark text-3">@sharedResource["Phone"] <span class="text-color-danger">*</span></label>
+							<input asp-for="Input.PhoneNumber" type="text" class="form-control form-control-lg text-4" required="">
+							<span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<label for="BankName" class="form-label text-color-dark text-3">@sharedResource["Bank Name"] <span class="text-color-danger">*</span></label>
+							<input asp-for="Input.BankName" type="text"  class="form-control form-control-lg text-4" required="">
+							<span asp-validation-for="Input.BankName" class="text-danger"></span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="form-group col">
+							<label for="Address" class="form-label text-color-dark text-3">@sharedResource["Address"] <span class="text-color-danger">*</span></label>
+							<input asp-for="Input.Address" type="text"  class="form-control form-control-lg text-4" required="">
+							<span asp-validation-for="Input.Address" class="text-danger"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<label for="password-input" class="form-label text-color-dark text-3">@sharedResource["Confirm Password"] <span class="text-color-danger">*</span></label>
+							<input asp-for="Input.ConfirmPassword" type="password" class="form-control form-control-lg text-4" required="">
+							<span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+						</div>
+					</div>
+					
+				
+			</div>
+				<div class="form-group col-md-12 col-lg-10">
+					@{
+						if (@BrowserCulture == "en-US")
+						{
+							<input type="submit" value=@sharedResource["Register"] class="btn btn-primary btn-modern float-end" data-loading-text="Loading...">
+
+						}
+						else
+						{
+							<input type="submit" value=@sharedResource["Register"] class="btn btn-primary btn-modern" data-loading-text="Loading...">
+
+						}
+					}
+				</div>
+		</div>
+		</form>
+	</div>
+
+</div>
+
+<script>
+	function CheckLicensed() {
+
+		var islicensed = document.getElementById("is_licensed")
+		console.log(islicensed)
+		const licensedtype = document.getElementById("licensedtypeID")
+		const licensednumber = document.getElementById("licensednumberID")
+		if (islicensed.checked == true) {
+			// 👇 this SHOWS the requiredInputs
+			licensedtype.style.display = 'block';
+			licensednumber.style.display = 'block';
+		}
+		else {
+			licensedtype.style.display = 'none';
+			licensednumber.style.display = 'none';
+		}
+	}
+	function formatAccountNumber() {
+		console.log("sadada")
+		var input = document.getElementById("accountNumber").value.replace(/[^0-9]/g, ""); // Remove non-digit characters
+		console.log(input)
+		var formattedInput = "";
+
+		for (var i = 0; i < input.length; i++) {
+			if (i > 0 && i % 4 == 0) {
+				formattedInput += "-";
+			}
+			formattedInput += input.charAt(i);
+		}
+
+		document.getElementById("accountNumber").value = formattedInput;
+	}
+</script>

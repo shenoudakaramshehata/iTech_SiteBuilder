@@ -1,0 +1,145 @@
+﻿@page
+@model iTech.Pages.TemplateModel
+@{
+    ViewData["Title"] = "Templates";
+    var locale = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+    Layout = "Shared/Public/_PublicLayout.cshtml";
+
+}
+<div role="main" class="main">
+
+    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(public/img/page-header/page-header-services.jpg);">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-10"><strong>@sharedResource["Templates"]</strong></h1>
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb breadcrumb-light d-block text-center">
+                        <li><a href="/Index">@sharedResource["Home"]</a></li>
+                        <li class="active">@sharedResource["Templates"]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="examples" class="container py-2">
+
+        <div class="row">
+            <div class="col">
+
+                <h4>@sharedResource["Categories"]</h4>
+
+                <ul class="nav nav-pills sort-source sort-source-style-3 justify-content-center" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
+                    <li class="nav-item active" data-option-value="*"><a class="nav-link text-2-5 text-uppercase active" href="#">@sharedResource["Show All"]</a></li>
+                    @{
+                        if (Model.siteCategories != null)
+                        {
+                            foreach (var item in Model.siteCategories)
+                            {
+                                if (Model.BrowserCulture == "en-US")
+                                {
+                                    <li class="nav-item" data-option-value=".@item.SiteCategoryId"><a class="nav-link text-2-5 text-uppercase" href="#">@item.TitleEn</a></li>
+
+                                }
+                                //Arabic
+                                else
+                                {
+                                    <li class="nav-item" data-option-value=".@item.SiteCategoryId"><a class="nav-link text-2-5 text-uppercase" href="#">@item.TitleAr</a></li>
+
+                                }
+                            }
+                        }
+                    }
+
+
+
+                </ul>
+
+                <div class="sort-destination-loader mt-4 pt-2 sort-destination-loader-loaded">
+                    <div class="row portfolio-list sort-destination" data-sort-id="portfolio" data-filter="*" style="position: relative; height: 296px;">
+                        @{
+                            if (Model.Templates!=null)
+                            {
+                                foreach (var item in Model.Templates)
+                                {
+                                    <div class="col-12 col-sm-6 col-lg-3 isotope-item @item.SiteCategoryId" style="position: absolute; left: 0px; top: 0px;">
+                                        <div class="image-gallery-item">
+
+                                            <span class="thumb-info thumb-info-centered-info thumb-info-no-borders">
+                                                <span class="thumb-info-wrapper">
+                                                    <img src="/@item.TemplatePic" style="width: 261px;height: 208px;" class="img-fluid" alt="">
+                                                    <span class="thumb-info-title">
+                                                       @if (Model.BrowserCulture == "en-US")
+                                                        {
+                                                            <span class="thumb-info-inner">@item.TitleEn</span>
+
+
+                                                        }
+                                                        //Arabic
+                                                        else
+                                                        {
+                                                            <span class="thumb-info-inner">@item.TitleAr</span>
+
+
+                                                        }
+                                                        @{
+                                                            if (@item.TemplatePrice == 0)
+                                                            {
+                                                                <span class="thumb-info-inner">@sharedResource["Free"]</span>
+                                                            }
+                                                            else
+                                                            {
+                                                                @if (Model.BrowserCulture == "en-US")
+                                                                {
+                                                                    <span class="thumb-info-inner">@item.TemplatePrice KD</span>
+
+
+                                                                }
+                                                                //Arabic
+                                                                else
+                                                                {
+                                                                    <span class="thumb-info-inner">@item.TemplatePrice دينار</span>
+
+
+                                                                }
+                                                               
+                                                            }
+                                                        }
+                                                        <a target="_blank"  asp-page="UserSiteName" asp-route-Id="@item.TemplateId" asp-route-planId="@Model.planPriceId">
+                                                            <span style="background-color:#007ECF;color:white" class="thumb-info-type">@sharedResource["Choose"]</span>
+                                                        </a>
+                                                    </span>
+                                                    <a href="/preview/@item.TemplateName/index.html">
+                                                        <span class="thumb-info-action">
+                                                            <span style="background-color:#007ECF;" class="thumb-info-action-icon"><i class="fa-solid fa-eye"></i></span>
+                                                        </span>
+                                                    </a>
+                                                </span>
+                                            </span>
+
+                                        </div>
+                                    </div>
+                                }
+                                
+                            }
+                            
+                        }
+
+
+                    </div>
+                    <div class="bounce-loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+<br />
+<br />
+<br />

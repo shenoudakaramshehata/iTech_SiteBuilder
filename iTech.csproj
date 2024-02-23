@@ -1,0 +1,307 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+	 <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <UserSecretsId>aspnet-iTech-30799904-e91b-4242-851c-8d0143f74b01</UserSecretsId>
+  	<RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
+	  <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+  	<RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Affiliate\Pages\Shared\Partials\**" />
+    <Content Remove="Areas\Affiliate\Pages\Shared\Partials\**" />
+    <EmbeddedResource Remove="Areas\Affiliate\Pages\Shared\Partials\**" />
+    <None Remove="Areas\Affiliate\Pages\Shared\Partials\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Admin\Pages\Sample.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Areas\Admin\Pages\Sample.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Areas\CRM\Pages\Profile\_AffiliatePrices1.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Areas\CRM\Pages\Profile\_AffiliatePrices1.html" />
+    <Content Include="DataTables\Column.cs" />
+    <Content Include="DataTables\DataTablesRequest.cs" />
+    <Content Include="DataTables\Order.cs" />
+    <Content Include="DataTables\Search.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\fraola\imgs\customers\adobe.svg" />
+    <None Include="wwwroot\fraola\imgs\customers\amazon.svg" />
+    <None Include="wwwroot\fraola\imgs\customers\apple.svg" />
+    <None Include="wwwroot\fraola\imgs\customers\cisco.svg" />
+    <None Include="wwwroot\fraola\imgs\customers\discovery.svg" />
+    <None Include="wwwroot\fraola\imgs\customers\ebay.svg" />
+    <None Include="wwwroot\fraola\imgs\customers\ibm.svg" />
+    <None Include="wwwroot\fraola\imgs\customers\intel.svg" />
+    <None Include="wwwroot\fraola\imgs\customers\orange.svg" />
+    <None Include="wwwroot\fraola\imgs\customers\panasonic.svg" />
+    <None Include="wwwroot\fraola\imgs\customers\salesforce.svg" />
+    <None Include="wwwroot\fraola\imgs\customers\samsung.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\android.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\basketball.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\browsers.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\celebration.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\chat.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\chatting.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\code.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\customer-survey.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\design-community.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\design-life.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\designer.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\developer.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\development.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\email.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\features.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\git.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\group-chat.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\hosting.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\ipad-report.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\ipad.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\iphone-hand.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\mobile-marketing.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\morning-essentials.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\opened.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\product-tour.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\rocket.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\scrum.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\simple-iphone.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\smile.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\social-media.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\sync.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\sync2.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\tabs.svg" />
+    <None Include="wwwroot\fraola\imgs\draws\tenis.svg" />
+    <None Include="wwwroot\fraola\imgs\hero\blue.svg" />
+    <None Include="wwwroot\fraola\imgs\hero\purple.svg" />
+    <None Include="wwwroot\fraola\imgs\hero\red.svg" />
+    <None Include="wwwroot\fraola\imgs\hero\yellow.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\cloud.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\coffee.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\compass.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\gift.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\github.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\layers.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\layout.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\life-buoy.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\mail.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\map-pin.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\map.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\monitor.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\navigation.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\package.svg" />
+    <None Include="wwwroot\fraola\imgs\icons\phone.svg" />
+    <None Include="wwwroot\fraola\imgs\shapes\1.svg" />
+    <None Include="wwwroot\fraola\imgs\shapes\10.svg" />
+    <None Include="wwwroot\fraola\imgs\shapes\2.svg" />
+    <None Include="wwwroot\fraola\imgs\shapes\4.svg" />
+    <None Include="wwwroot\fraola\imgs\shapes\5.svg" />
+    <None Include="wwwroot\fraola\imgs\shapes\6.svg" />
+    <None Include="wwwroot\fraola\imgs\shapes\7.svg" />
+    <None Include="wwwroot\fraola\imgs\shapes\8.svg" />
+    <None Include="wwwroot\fraola\imgs\shapes\9.svg" />
+    <None Include="wwwroot\froala-editor\html\file_s3_upload.php" />
+    <None Include="wwwroot\froala-editor\html\image_s3_upload.php" />
+    <None Include="wwwroot\froala-editor\js\froala_editor.min.js" />
+    <None Include="wwwroot\froala-editor\js\froala_editor.pkgd.min.js" />
+    <None Include="wwwroot\froala-editor\js\languages\ar.js" />
+    <None Include="wwwroot\froala-editor\js\languages\bs.js" />
+    <None Include="wwwroot\froala-editor\js\languages\cs.js" />
+    <None Include="wwwroot\froala-editor\js\languages\da.js" />
+    <None Include="wwwroot\froala-editor\js\languages\de.js" />
+    <None Include="wwwroot\froala-editor\js\languages\el.js" />
+    <None Include="wwwroot\froala-editor\js\languages\en_ca.js" />
+    <None Include="wwwroot\froala-editor\js\languages\en_gb.js" />
+    <None Include="wwwroot\froala-editor\js\languages\es.js" />
+    <None Include="wwwroot\froala-editor\js\languages\et.js" />
+    <None Include="wwwroot\froala-editor\js\languages\fa.js" />
+    <None Include="wwwroot\froala-editor\js\languages\fi.js" />
+    <None Include="wwwroot\froala-editor\js\languages\fr.js" />
+    <None Include="wwwroot\froala-editor\js\languages\he.js" />
+    <None Include="wwwroot\froala-editor\js\languages\hr.js" />
+    <None Include="wwwroot\froala-editor\js\languages\hu.js" />
+    <None Include="wwwroot\froala-editor\js\languages\id.js" />
+    <None Include="wwwroot\froala-editor\js\languages\it.js" />
+    <None Include="wwwroot\froala-editor\js\languages\ja.js" />
+    <None Include="wwwroot\froala-editor\js\languages\ko.js" />
+    <None Include="wwwroot\froala-editor\js\languages\ku.js" />
+    <None Include="wwwroot\froala-editor\js\languages\me.js" />
+    <None Include="wwwroot\froala-editor\js\languages\nb.js" />
+    <None Include="wwwroot\froala-editor\js\languages\nl.js" />
+    <None Include="wwwroot\froala-editor\js\languages\pl.js" />
+    <None Include="wwwroot\froala-editor\js\languages\pt_br.js" />
+    <None Include="wwwroot\froala-editor\js\languages\pt_pt.js" />
+    <None Include="wwwroot\froala-editor\js\languages\ro.js" />
+    <None Include="wwwroot\froala-editor\js\languages\ru.js" />
+    <None Include="wwwroot\froala-editor\js\languages\sk.js" />
+    <None Include="wwwroot\froala-editor\js\languages\sl.js" />
+    <None Include="wwwroot\froala-editor\js\languages\sr.js" />
+    <None Include="wwwroot\froala-editor\js\languages\sv.js" />
+    <None Include="wwwroot\froala-editor\js\languages\th.js" />
+    <None Include="wwwroot\froala-editor\js\languages\tr.js" />
+    <None Include="wwwroot\froala-editor\js\languages\uk.js" />
+    <None Include="wwwroot\froala-editor\js\languages\vi.js" />
+    <None Include="wwwroot\froala-editor\js\languages\zh_cn.js" />
+    <None Include="wwwroot\froala-editor\js\languages\zh_tw.js" />
+    <None Include="wwwroot\froala-editor\js\plugins.pkgd.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\align.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\char_counter.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\code_beautifier.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\code_view.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\colors.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\cryptojs.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\draggable.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\edit_in_popup.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\emoticons.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\entities.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\file.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\files_manager.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\font_family.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\font_size.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\forms.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\fullscreen.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\help.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\image.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\image_manager.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\inline_class.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\inline_style.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\line_breaker.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\line_height.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\link.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\lists.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\markdown.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\paragraph_format.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\paragraph_style.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\print.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\quick_insert.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\quote.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\save.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\special_characters.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\table.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\track_changes.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\trim_video.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\url.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\video.min.js" />
+    <None Include="wwwroot\froala-editor\js\plugins\word_paste.min.js" />
+    <None Include="wwwroot\froala-editor\js\third_party\embedly.min.js" />
+    <None Include="wwwroot\froala-editor\js\third_party\font_awesome.min.js" />
+    <None Include="wwwroot\froala-editor\js\third_party\image_tui.min.js" />
+    <None Include="wwwroot\froala-editor\js\third_party\showdown.min.js" />
+    <None Include="wwwroot\froala-editor\js\third_party\spell_checker.min.js" />
+    <None Include="wwwroot\froala-editor\README.md" />
+    <None Include="wwwroot\Public\vendor\jquery.countdown\jquery.countdown.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.2.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NToastNotify" Version="8.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	<PackageReference Include="RestSharp" Version="109.0.1" />
+	<PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\Admin\Pages\_AddBrand.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Affiliate\Pages\Index.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Affiliate\Pages\Shared\_Layout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Affiliate\Pages\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Affiliate\Pages\_ViewStart.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Shared\_BuilderLayout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Shared\_customizer.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Shared\_footer.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Shared\_head_css.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Shared\_Layout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Shared\_LoginPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Shared\_menu.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Shared\_page_title.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Shared\_title_meta.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Shared\_topbar.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Pages\Shared\_ValidationScriptsPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Pages\Shared\Partials\" />
+    <Folder Include="wwwroot\Images\Affiliate\" />
+    <Folder Include="wwwroot\Images\Admin\" />
+    <Folder Include="wwwroot\Images\Features\" />
+    <Folder Include="wwwroot\Users\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\froala-editor\index.d.ts" />
+  </ItemGroup>
+
+</Project>

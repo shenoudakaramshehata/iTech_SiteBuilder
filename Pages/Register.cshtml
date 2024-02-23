@@ -1,0 +1,107 @@
+﻿@page
+@model iTech.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Register / تسجيل مستخدم جديد";
+    Layout = "Shared/Public/_PublicLayout.cshtml";
+
+	var locale = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+	var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+}
+<div role="main" class="main">
+
+    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(public/img/page-header/page-header-services.jpg);">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-10"><strong>@sharedResource["Register"]</strong></h1>
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb breadcrumb-light d-block text-center">
+						<li><a href="/Index">@sharedResource["Home"]</a></li>
+						<li class="active">@sharedResource["Register"]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<div class="container py-4">
+
+		<div class="row justify-content-center" style="margin-top: -2rem;height: 27rem;">
+			<div class="col-md-6 col-lg-5 mb-5 mb-lg-0">
+				<h2 class="font-weight-bold text-5 mb-0">@sharedResource["Register"]</h2>
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<form method="post" id="frmSignIn" method="post" class="needs-validation" novalidate="novalidate">
+					<div class="row">
+						<div class="form-group col">
+							<label asp-for="Input.Email" class="form-label text-color-dark text-3">@sharedResource["Email address"] <span class="text-color-danger">*</span></label>
+							<input asp-for="Input.Email" type="text"  class="form-control form-control-lg text-4" required="">
+							<span asp-validation-for="Input.Email" class="text-danger"></span>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<label asp-for="Input.Password" class="form-label text-color-dark text-3">
+								@sharedResource["Password"] <span class="text-color-danger">*</span>
+							</label>
+							<input asp-for="Input.Password" type="password" class="form-control form-control-lg text-4" required="">
+							<span asp-validation-for="Input.Password" class="text-danger"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col">
+							<label asp-for="Input.ConfirmPassword" class="form-label text-color-dark text-3">@sharedResource["Confirm Password"] <span class="text-color-danger">*</span></label>
+							<input asp-for="Input.ConfirmPassword" type="password" class="form-control form-control-lg text-4" required="">
+							<span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+						</div>
+					</div>
+
+					<div class="form-group col-lg-12">
+						@{
+							if (@BrowserCulture == "en-US")
+							{
+								<input type="submit" value=@sharedResource["Register"] class="btn btn-primary btn-modern float-end" data-loading-text="Loading...">
+
+							}
+							else
+							{
+								<input type="submit" value=@sharedResource["Register"] class="btn btn-primary btn-modern" data-loading-text="Loading...">
+
+							}
+						}
+					</div>
+				</form>
+			</div>
+			@*	<div class="col-md-6 col-lg-5">
+			<h2 class="font-weight-bold text-5 mb-0">Register</h2>
+			<form action="https://www.okler.net/" id="frmSignUp" method="post">
+			<div class="row">
+			<div class="form-group col">
+			<label class="form-label text-color-dark text-3">Username or email address <span class="text-color-danger">*</span></label>
+			<input type="text" value="" class="form-control form-control-lg text-4" required="">
+			</div>
+			</div>
+			<div class="row">
+			<div class="form-group col">
+			<label class="form-label text-color-dark text-3">Password <span class="text-color-danger">*</span></label>
+			<input type="password" value="" class="form-control form-control-lg text-4" required="">
+			</div>
+			</div>
+			<div class="row">
+			<div class="form-group col">
+			<p class="text-2 mb-2">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#" class="text-decoration-none">privacy policy.</a></p>
+			</div>
+			</div>
+			<div class="row">
+			<div class="form-group col">
+			<button type="submit" class="btn btn-dark btn-modern w-100 text-uppercase rounded-0 font-weight-bold text-3 py-3" data-loading-text="Loading...">Register</button>
+			</div>
+			</div>
+			</form>
+			</div>*@
+		</div>
+
+	</div>
+
+</div>
